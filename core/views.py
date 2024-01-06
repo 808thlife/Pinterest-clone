@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .utils import update_view_counter
 from .models import Post
 
 # Create your views here.
@@ -8,5 +9,8 @@ def index(request):
     return render(request, "core/index.html", context)
 
 def post(request, id):
-    return render(request, "core/post.html")
+    post = Post.objects.get(id = id)
+    update_view_counter(post)
+    context = {"post":post}
+    return render(request, "core/post.html", context)
 

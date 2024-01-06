@@ -2,4 +2,4 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
-    pass
+    photo = models.ImageField(default= "core/img/av.png", upload_to = "core/img/userslogo")    
