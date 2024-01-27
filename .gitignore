@@ -91,5 +91,6 @@ db.sqlite3
 
 #custom files
 TODO.txt
-.media
+.media/
+media/core/img
 .vscode
